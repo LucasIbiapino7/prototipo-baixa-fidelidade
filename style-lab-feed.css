@@ -1,0 +1,294 @@
+/* ========= Variáveis ========= */
+:root {
+  --card-width: 260px;
+  --card-height: 220px;
+  --radius: 8px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --gap: 1.5rem;
+  --header-height: 64px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  color: #292929;
+}
+
+/***** ---------- Header ---------- *****/
+.header {
+  height: var(--header-height);
+  background: #1a73e8;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+/* Breadcrumb dentro do header */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.breadcrumb-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+.breadcrumb-current {
+  opacity: 0.9;
+  font-weight: 400;
+}
+.breadcrumb-sep {
+  opacity: 0.7;
+}
+
+/***** ---------- Tabs ---------- *****/
+.tabs {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+.tab {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #5f6368;
+  text-decoration: none;
+  position: relative;
+}
+.tab.active {
+  color: #1a73e8;
+  font-weight: 600;
+}
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #1a73e8;
+}
+
+/***** ---------- Banner do Lab ---------- *****/
+.banner-lab {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  color: #fff;
+}
+.banner-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+.banner-icon {
+  position: absolute;
+  right: 2rem;
+  bottom: -28px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  background: #e0e0e0;
+}
+
+/***** ---------- Feed Layout ---------- *****/
+.feed-container {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Coluna lateral de eventos */
+.next-events-card {
+  width: 240px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.next-events-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.next-events-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #444;
+}
+.next-events-card li + li {
+  margin-top: 0.4rem;
+}
+.see-all {
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #1a73e8;
+}
+
+/* Coluna principal */
+.feed-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/***** Caixa de postagem (membros) *****/
+.compose-box {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  gap: 0.75rem;
+}
+.compose-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #cfd8dc;
+}
+.compose-box input {
+  flex: 1;
+  border: none;
+  font-size: 0.95rem;
+  outline: none;
+}
+.compose-btn {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.compose-btn:hover {
+  background: #0f62d1;
+}
+
+/***** Post card *****/
+.post-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+.post-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.post-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+.post-author {
+  font-weight: 600;
+  color: #222;
+}
+.post-date {
+  color: #666;
+}
+.post-menu {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.post-body {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.post-footer {
+  display: flex;
+  gap: 1rem;
+}
+.reaction-btn {
+  background: transparent;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.reaction-btn:hover {
+  color: #1a73e8;
+}
+
+/***** Responsividade *****/
+@media (max-width: 900px) {
+  .feed-container {
+    flex-direction: column;
+  }
+  .next-events-card {
+    width: 100%;
+    order: 1;
+  }
+  .feed-column {
+    order: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    justify-content: center;
+    padding: 0 1rem;
+  }
+  .tabs {
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+  .banner-lab {
+    padding-left: 1.5rem;
+    height: 130px;
+  }
+  .banner-title {
+    font-size: 1.4rem;
+  }
+  .feed-container {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,145 @@
+/* ========= Variáveis ========= */
+:root {
+  --card-width: 260px;
+  --card-height: 220px;
+  --radius: 8px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --gap: 1.5rem;
+  --header-height: 64px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  color: #292929;
+}
+
+/* ---------- Header ---------- */
+.header {
+  height: var(--header-height);
+  background: #1a73e8;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Grid ---------- */
+.labs-grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+  gap: var(--gap);
+  justify-items: center;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: var(--card-width);
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.22);
+}
+
+.card-banner {
+  position: relative;
+  height: 90px;
+  color: #fff;
+  padding: 0.75rem 0.75rem 0 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: #ffffffcc;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  color: #fff;
+}
+
+.lab-icon {
+  position: absolute;
+  bottom: -28px;
+  right: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+  background: #e0e0e0;
+}
+
+.card-body {
+  flex: 1;
+  padding: 2.25rem 0.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.professor-name {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.lab-desc {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #666;
+  line-height: 1.35;
+  height: 2.9em; /* ~2 linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+  .labs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeleMídia</title>
+    <link rel="stylesheet" href="style-lab-feed.css" />
+  </head>
+  <body>
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <nav class="breadcrumb">
+        <a href="labs_home.html" class="breadcrumb-link">Labs</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">TeleMídia</span>
+      </nav>
+    </header>
+
+    <!-- ===== Tabs ===== -->
+    <div class="tabs">
+      <a href="#" class="tab active">Feed</a>
+      <a href="#" class="tab">Atividades</a>
+      <a href="#" class="tab">Materiais</a>
+      <a href="#" class="tab">Membros</a>
+    </div>
+
+    <!-- ===== Banner ===== -->
+    <section class="banner-lab" style="background: linear-gradient(135deg,#8e24aa,#d05ce3);">
+      <h2 class="banner-title">TeleMídia</h2>
+      <img src="assets/telemidia-logo.png" alt="LabSoft ícone" class="banner-icon" />
+    </section>
+
+    <!-- ===== Main content ===== -->
+    <main class="feed-container">
+      <aside class="next-events-card">
+        <h3>Próximos eventos</h3>
+        <ul>
+          <li><strong>15/07</strong> Descrição de evento</li>
+          <li><strong>21/07</strong> Descrição de reunião</li>
+        </ul>
+        <a href="#" class="see-all">Ver tudo</a>
+      </aside>
+
+      <div class="feed-column">
+        <div class="compose-box">
+          <img src="avatars/user.png" alt="avatar" class="compose-avatar" />
+          <input type="text" placeholder="Compartilhe uma novidade com o lab…" />
+          <button class="compose-btn">Postar</button>
+        </div>
+
+        <!-- Exemplo de post -->
+        <article class="post-card">
+          <header class="post-header">
+            <img src="icons/labsoft.png" alt="avatar" class="post-avatar" />
+            <div class="post-meta">
+              <span class="post-author">Professor</span>
+              <span class="post-date">07 de maios</span>
+            </div>
+            <button class="post-menu">⋮</button>
+          </header>
+          <div class="post-body">
+            <p>
+              Exemplo de postagem
+            </p>
+          </div>
+          <footer class="post-footer">
+            <button class="reaction-btn">👍 4</button>
+            <button class="reaction-btn">💬 2</button>
+          </footer>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
